@@ -38,6 +38,7 @@
             this.btnSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.btnComplilar = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Consola = new System.Windows.Forms.RichTextBox();
             this.rtbCodigo = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -52,7 +53,7 @@
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(773, 24);
+            this.panel1.Size = new System.Drawing.Size(614, 24);
             this.panel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -63,7 +64,7 @@
             this.btnComplilar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(773, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(614, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,35 +84,35 @@
             // btnNuevo
             // 
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(180, 22);
+            this.btnNuevo.Size = new System.Drawing.Size(150, 22);
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnAbrir
             // 
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(180, 22);
+            this.btnAbrir.Size = new System.Drawing.Size(150, 22);
             this.btnAbrir.Text = "Abrir";
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(180, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(150, 22);
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnGuardarComo
             // 
             this.btnGuardarComo.Name = "btnGuardarComo";
-            this.btnGuardarComo.Size = new System.Drawing.Size(180, 22);
+            this.btnGuardarComo.Size = new System.Drawing.Size(150, 22);
             this.btnGuardarComo.Text = "Guardar como";
             this.btnGuardarComo.Click += new System.EventHandler(this.btnGuardarComo_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(180, 22);
+            this.btnSalir.Size = new System.Drawing.Size(150, 22);
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -128,21 +129,40 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.Consola);
             this.panel2.Controls.Add(this.rtbCodigo);
             this.panel2.Location = new System.Drawing.Point(3, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(773, 421);
+            this.panel2.Size = new System.Drawing.Size(614, 445);
             this.panel2.TabIndex = 1;
+            // 
+            // Consola
+            // 
+            this.Consola.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Consola.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Consola.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Consola.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Consola.ForeColor = System.Drawing.SystemColors.Menu;
+            this.Consola.Location = new System.Drawing.Point(0, 349);
+            this.Consola.Name = "Consola";
+            this.Consola.ReadOnly = true;
+            this.Consola.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal;
+            this.Consola.Size = new System.Drawing.Size(614, 96);
+            this.Consola.TabIndex = 1;
+            this.Consola.Text = "";
             // 
             // rtbCodigo
             // 
+            this.rtbCodigo.AcceptsTab = true;
             this.rtbCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbCodigo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.rtbCodigo.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbCodigo.Location = new System.Drawing.Point(0, 3);
             this.rtbCodigo.Name = "rtbCodigo";
-            this.rtbCodigo.Size = new System.Drawing.Size(773, 418);
+            this.rtbCodigo.Size = new System.Drawing.Size(614, 340);
             this.rtbCodigo.TabIndex = 0;
             this.rtbCodigo.Text = "";
             this.rtbCodigo.UseWaitCursor = true;
@@ -152,10 +172,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(778, 452);
+            this.ClientSize = new System.Drawing.Size(619, 476);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(635, 515);
             this.Name = "CompiladorNi";
             this.Text = "Compilador Ni";
             this.panel1.ResumeLayout(false);
@@ -180,5 +201,6 @@
         private Panel panel2;
         private RichTextBox rtbCodigo;
         private ToolStripMenuItem btnSalir;
+        private RichTextBox Consola;
     }
 }

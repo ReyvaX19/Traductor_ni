@@ -9,10 +9,10 @@ namespace Traductor_ni
     enum TipoTokken { PalabraReservada, Variables, ValoresNumericos, SimbolosEspaciosYPuntuaciones}
     internal class Tokens
     {
-        int id;
-        TipoTokken tipo;
-        string contenido = string.Empty;
-        int linea;
+        public int id;
+        public TipoTokken tipo;
+        public string contenido = string.Empty;
+        public int linea;
 
         public Tokens(int ID, string Lexema, int Linea, TipoTokken tipo)
         {

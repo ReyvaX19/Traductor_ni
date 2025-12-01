@@ -13,11 +13,18 @@ namespace Traductor_ni
         private void btnComplilar_Click(object sender, EventArgs e)
         {
             bool Compilacion;
-            //corre primero el analizador Lexico.
+            //corre primero el analizador Lexico
             Compilacion = AL.AnalisisLexico(rtbCodigo.Text);
             if (Compilacion)
             {
-                //imprimimos en Consola. 
+                //imprimimos en Consola.
+                List<Tokens> tokens = AL.lexemas;
+                string MensajeConsola = string.Empty;
+                foreach (Tokens t in tokens)
+                {
+                    MensajeConsola += ("{" + t.contenido + "},");
+                }
+                Consola.Text = MensajeConsola;
             }
         }
 

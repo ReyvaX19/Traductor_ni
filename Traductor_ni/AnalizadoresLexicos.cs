@@ -9,7 +9,7 @@ namespace Traductor_ni
     internal class AnalizadoresLexicos
     {
         UnidadesLexicas UL = new UnidadesLexicas();
-        List<Tokens> lexemas = new List<Tokens>();
+        public List<Tokens> lexemas = new List<Tokens>();
         string lexemaActivo = string.Empty;
         int cuentaCaracter = 0;
 
@@ -58,10 +58,9 @@ namespace Traductor_ni
                 }
                 else 
                 {
-                    cuentaCaracter++;
                     break;
                 }
-            }while(true);
+            }while(cuentaCaracter < Archivo.Length);
 
             Tokens resultado = UL.ObtenerIdPlabra(lexemaActivo, linea);
 
@@ -97,16 +96,11 @@ namespace Traductor_ni
                         return 2;
                     }
                 }
-                else if (c == ' ')
-                {
-                    cuentaCaracter++;
-                    break;
-                }
                 else
                 {
-                    return 1;
+                    break;
                 }
-            } while (true);
+            } while (cuentaCaracter < Archivo.Length);
 
             Tokens resultado = new Tokens(110 + estado, lexemaActivo, linea, TipoTokken.ValoresNumericos);
 
@@ -120,7 +114,7 @@ namespace Traductor_ni
         {
             cuentaCaracter++;
 
-            if (Archivo[cuentaCaracter] == '=')
+            if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
                 lexemas.Add(new Tokens(41,"<=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
@@ -135,7 +129,7 @@ namespace Traductor_ni
         {
             cuentaCaracter++;
 
-            if (Archivo[cuentaCaracter] == '=')
+            if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
                 lexemas.Add(new Tokens(42,">=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
@@ -150,7 +144,7 @@ namespace Traductor_ni
         {
             cuentaCaracter++;
 
-            if (Archivo[cuentaCaracter] == '=')
+            if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
                 lexemas.Add(new Tokens(38, "!=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
@@ -164,8 +158,8 @@ namespace Traductor_ni
         protected void AutomataIgual(string Archivo, int linea)
         {
             cuentaCaracter++;
-
-            if (Archivo[cuentaCaracter] == '=')
+            
+            if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
                 lexemas.Add(new Tokens(37, "==", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
@@ -195,7 +189,7 @@ namespace Traductor_ni
                         cuentaCaracter++;
                         break;
                     case '\t':
-                        lexemas.Add(new Tokens(51, linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(51, "TAB", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
                         cuentaCaracter++;
                         break;
                     case '\n':

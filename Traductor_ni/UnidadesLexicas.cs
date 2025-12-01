@@ -30,6 +30,10 @@ namespace Traductor_ni
                 PalabrasReservadas.Add("ciclo_num",13);
                 PalabrasReservadas.Add("funcion",14);
                 PalabrasReservadas.Add("recibe",15);
+                PalabrasReservadas.Add("true", 16);
+                PalabrasReservadas.Add("verdadero", 16);
+                PalabrasReservadas.Add("false", 17);
+                PalabrasReservadas.Add("falso", 17);
 
                 PalabrasReservadas.Add("char",21);
                 PalabrasReservadas.Add("float",22);
