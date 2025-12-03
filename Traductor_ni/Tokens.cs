@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Traductor_ni
 {
-    enum TipoTokken { PalabraReservada, Variables, ValoresNumericos, SimbolosEspaciosYPuntuaciones}
+    enum TipoTokken { PalabraReservada, Variables, ValoresNumericos, SimbolosEspaciosYPuntuaciones, Operadores}
     internal class Tokens
     {
         public int id;

@@ -120,11 +120,11 @@ namespace Traductor_ni
             if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
-                lexemas.Add(new Tokens(41,"<=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(41,"<=", linea, TipoTokken.Operadores));
             }
             else
             {
-                lexemas.Add(new Tokens(39,"<", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(39,"<", linea, TipoTokken.Operadores));
             }
         }
 
@@ -135,11 +135,11 @@ namespace Traductor_ni
             if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
-                lexemas.Add(new Tokens(42,">=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(42,">=", linea, TipoTokken.Operadores));
             }
             else
             {
-                lexemas.Add(new Tokens(40, ">", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(40, ">", linea, TipoTokken.Operadores));
             }
         }
 
@@ -150,11 +150,11 @@ namespace Traductor_ni
             if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
-                lexemas.Add(new Tokens(38, "!=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(38, "!=", linea, TipoTokken.Operadores));
             }
             else
             {
-                lexemas.Add(new Tokens(45, "!", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(45, "!", linea, TipoTokken.Operadores));
             }
         }
 
@@ -165,11 +165,11 @@ namespace Traductor_ni
             if (cuentaCaracter < Archivo.Length && Archivo[cuentaCaracter] == '=')
             {
                 cuentaCaracter++;
-                lexemas.Add(new Tokens(37, "==", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(37, "==", linea, TipoTokken.Operadores));
             }
             else
             {
-                lexemas.Add(new Tokens(36, "=", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                lexemas.Add(new Tokens(36, "=", linea, TipoTokken.Operadores));
             }
         }
 
@@ -240,23 +240,23 @@ namespace Traductor_ni
                         compilacion = ErrorManager(AutomataCadena(Archivo, linea), linea, Archivo);                  
                         break;
                     case '+':
-                        lexemas.Add(new Tokens(31, "+", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(31, "+", linea, TipoTokken.Operadores));
                         cuentaCaracter++;
                         break;
                     case '-':
-                        lexemas.Add(new Tokens(32, "-", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(32, "-", linea, TipoTokken.Operadores));
                         cuentaCaracter++;
                         break;
                     case '*':
-                        lexemas.Add(new Tokens(33, "*", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(33, "*", linea, TipoTokken.Operadores));
                         cuentaCaracter++;
                         break;
                     case '/':
-                        lexemas.Add(new Tokens(34, "/", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(34, "/", linea, TipoTokken.Operadores));
                         cuentaCaracter++;
                         break;
                     case '%':
-                        lexemas.Add(new Tokens(35, "%", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(35, "%", linea, TipoTokken.Operadores));
                         cuentaCaracter++;
                         break;
                     case '(':
