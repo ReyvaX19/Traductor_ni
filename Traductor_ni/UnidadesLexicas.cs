@@ -18,14 +18,18 @@ namespace Traductor_ni
                 PalabrasReservadas.Add("caso", 2);
                 PalabrasReservadas.Add("constante", 3);
                 PalabrasReservadas.Add("hacer", 4);
+                PalabrasReservadas.Add("do", 4);
                 PalabrasReservadas.Add("sino",5);
+                PalabrasReservadas.Add("else", 5);
                 PalabrasReservadas.Add("repite",6);
                 PalabrasReservadas.Add("si",7);
+                PalabrasReservadas.Add("if", 7);
                 PalabrasReservadas.Add("devuelve",8);
                 PalabrasReservadas.Add("switch",9);
                 PalabrasReservadas.Add("void",10);
                 PalabrasReservadas.Add("nada",10);
                 PalabrasReservadas.Add("mientras",11);
+                PalabrasReservadas.Add("while", 11);
                 PalabrasReservadas.Add("es",12);
                 PalabrasReservadas.Add("ciclo_num",13);
                 PalabrasReservadas.Add("funcion",14);

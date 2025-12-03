@@ -34,6 +34,9 @@ namespace Traductor_ni
                 case 3:
                     MessageBox.Show("Error Lexico!\nCaracter no valido \"" + Archivo[cuentaCaracter] + "\" en linea:" + linea);
                     return false;
+                case 4:
+                    MessageBox.Show("Error Sintactico!\nEn la linea " + linea + " se espera un \" despues de \"" + lexemaActivo + "\"");
+                    return false;
                 default: 
                     return true;
             }
@@ -170,6 +173,31 @@ namespace Traductor_ni
             }
         }
 
+        protected int AutomataCadena(string Archivo, int linea)
+        {
+            char c;
+
+            do
+            {
+                c = Archivo[cuentaCaracter];
+                lexemaActivo += c;
+
+                if (c == '\n')
+                {
+                    return 4;
+                }
+                else if (c == '\"' && lexemaActivo.Length > 1)
+                {
+                    lexemas.Add(new Tokens(113, lexemaActivo, linea, TipoTokken.Variables));
+                    cuentaCaracter++;
+                    lexemaActivo = string.Empty;
+                    return 0;
+                }
+                cuentaCaracter++;
+            }while(cuentaCaracter < Archivo.Length);
+            return 4;
+        }
+
         public bool AnalisisLexico(string Archivo)
         {
             lexemas.Clear();
@@ -209,8 +237,7 @@ namespace Traductor_ni
                         AutomataIgual(Archivo,linea);
                         break;
                     case '\"':
-                        lexemas.Add(new Tokens(50, "\"", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
-                        cuentaCaracter++;
+                        compilacion = ErrorManager(AutomataCadena(Archivo, linea), linea, Archivo);                  
                         break;
                     case '+':
                         lexemas.Add(new Tokens(31, "+", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
