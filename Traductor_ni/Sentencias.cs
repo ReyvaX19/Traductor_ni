@@ -29,11 +29,11 @@ namespace Traductor_ni
         }
     }
 
-    internal class Funcion : Estructuras
+    internal class Funciones : Estructuras
     {
         public string nombre = string.Empty;
         
-        public Funcion()
+        public Funciones()
         {
 
         }

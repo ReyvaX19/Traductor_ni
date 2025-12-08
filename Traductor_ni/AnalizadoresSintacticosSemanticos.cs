@@ -66,6 +66,9 @@ namespace Traductor_ni
                 case 7:
                     MessageBox.Show("Error sintactico!\nEn la linea " + Lineas[LineaActual][Lexema].linea + " se esperaba un nombre de variable");
                     return false;
+                case 8:
+                    MessageBox.Show("Error sintactico!\nEn la linea " + Lineas[LineaActual][Lexema].linea + " se esta recibiendo un Token invalido");
+                    return false;
                 default: return true;
 
             }
@@ -364,9 +367,12 @@ namespace Traductor_ni
                         case 18: //Palabra reservada "imprime" de Printf
                             break;
 
-                        case 1: //Palabra reservada "fin" o "breake"
+                        case 1: //Palabra reservada "fin" o "break"
                             break;
 
+                        default:
+                            compilacion = ErrorManager(8);
+                            break;
                     }
                 }
                 LineaActual++;
