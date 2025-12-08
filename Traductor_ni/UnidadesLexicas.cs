@@ -38,6 +38,7 @@ namespace Traductor_ni
                 PalabrasReservadas.Add("verdadero", 16);
                 PalabrasReservadas.Add("false", 17);
                 PalabrasReservadas.Add("falso", 17);
+                PalabrasReservadas.Add("imprime", 18);
 
                 PalabrasReservadas.Add("char",21);
                 PalabrasReservadas.Add("float",22);
@@ -78,9 +79,9 @@ namespace Traductor_ni
                 PalabrasReservadas.Add(":",48);
                 PalabrasReservadas.Add(".",49);
                 PalabrasReservadas.Add("\"",50);
+                PalabrasReservadas.Add(",",51);
 
-                PalabrasReservadas.Add("\t",51);
-                PalabrasReservadas.Add("\n",52);
+                PalabrasReservadas.Add("\t",60);
                 //Nombres de Variables ID =100
 
                 //valores numericos id

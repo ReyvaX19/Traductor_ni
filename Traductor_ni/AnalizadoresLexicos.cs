@@ -217,7 +217,7 @@ namespace Traductor_ni
                         cuentaCaracter++;
                         break;
                     case '\t':
-                        lexemas.Add(new Tokens(51, "TAB", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        lexemas.Add(new Tokens(60, "TAB", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
                         cuentaCaracter++;
                         break;
                     case '\n':
@@ -273,6 +273,10 @@ namespace Traductor_ni
                         break;
                     case '.':
                         lexemas.Add(new Tokens(49, ".", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
+                        cuentaCaracter++;
+                        break;
+                    case ',':
+                        lexemas.Add(new Tokens(51, ",", linea, TipoTokken.SimbolosEspaciosYPuntuaciones));
                         cuentaCaracter++;
                         break;
 
